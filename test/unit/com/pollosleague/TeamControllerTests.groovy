@@ -1,5 +1,7 @@
 package com.pollosleague
 
+import grails.test.mixin.*
+
 @TestFor(TeamController)
 class TeamControllerTests {
 
