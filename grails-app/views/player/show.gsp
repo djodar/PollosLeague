@@ -2,7 +2,7 @@
     <head>
         <title>Pollos League</title>
         <meta name="layout" content="main" />
-		<r:require module="jquery"/>
+<%--		<r:require module="jquery"/>--%>
     </head>
     <body>
 		<table>

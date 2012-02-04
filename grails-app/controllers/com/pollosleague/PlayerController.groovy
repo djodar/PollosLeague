@@ -10,6 +10,7 @@ class PlayerController {
 //			render(contentType: "text/json") {
 //				playerService.getPlayer(params.id)
 //			}
+			log.debug("Player ID: " + params.id);
 			def player = playerService.getPlayer(params.id)
 			request.model = player
 		} else {

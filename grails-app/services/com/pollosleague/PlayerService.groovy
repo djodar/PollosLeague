@@ -6,6 +6,7 @@ import org.codehaus.groovy.grails.web.json.JSONObject
 
 class PlayerService {
 
+	static transactional = false
 	final URL = "http://fantasy.premierleague.com/web/api/elements/"
     
 	JSONObject getPlayer(String id) {
