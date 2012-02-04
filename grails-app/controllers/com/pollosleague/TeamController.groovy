@@ -11,13 +11,30 @@ class TeamController {
 		int alburnosCode = "499168".toInteger()
 		log.info "Show team ${alburnosCode} for gameweek ${gameweek}"
 		
-		// cache these values as it's expensive to retrieve
-		String[] playerIdList = teamService.getTeamIds(gameweek, alburnosCode)
-		def playerList = teamService.getTeam(playerIdList)
+		def playerList = teamService.getTeam(getTeamIdList(gameweek, alburnosCode))
 		
 		assert playerList != null
 		request.model = playerList
 		render view: "show"
+	}
+
+	/**
+	 * Checks session for Ids otherwise it calls the service	
+	 */
+	private String[] getTeamIdList(int gameweek, int alburnosCode){
+		String sessionAttr = "team${alburnosCode}Ids${gameweek}"
+		def teamIdsList = session[sessionAttr]
+		if(teamIdsList != null){
+			log.info("Loading team Ids from session.");
+			assert teamIdsList instanceof String[]
+			return teamIdsList 
+		} else {
+			log.info("Calling team service and storing team ids object in session.");
+			teamIdsList = teamService.getTeamIds(gameweek, alburnosCode)
+			assert teamIdsList != null
+			session[sessionAttr] = teamIdsList 
+			return teamIdsList 
+		}
 	}
 	
 }
