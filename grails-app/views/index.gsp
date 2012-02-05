@@ -113,6 +113,36 @@
 							Fabio GW 24
 						</g:link>
 					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 2266824]">
+							Jesus GW 24
+						</g:link>
+					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 206492]">
+							Victor GW 24
+						</g:link>
+					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 379748]">
+							Abel GW 24
+						</g:link>
+					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 190450]">
+							Javi GW 24
+						</g:link>
+					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 2281707]">
+							Oscar GW 24
+						</g:link>
+					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 2279268]">
+							Alexis GW 24
+						</g:link>
+					</li>
 				</ul>
 			</div>
 		</div>
