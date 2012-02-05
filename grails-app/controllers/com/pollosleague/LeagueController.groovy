@@ -25,10 +25,8 @@ class LeagueController {
 		def leagueIdList = getLeagueIdList(gameweek)
 		
 		for(team in leagueIdList){
-			log.info(leagueIdList)
 			leagueObjects.add([team[0], teamService.getTeam(team[1])])
 		}
-		log.info(leagueObjects)
 		request.model = leagueObjects
 		render view: "show"
 	}

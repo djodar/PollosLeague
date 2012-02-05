@@ -16,8 +16,12 @@
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 		<g:layoutHead/>
         <r:layoutResources />
+        <g:if test="${GrailsUtil.getEnvironment() == 'production'}">
+        	<g:render template="/shared/analytics" />
+        </g:if>
 	</head>
 	<body>
+		
 		<div id="grailsLogo" role="banner">
 			<a href="#">Gameweek View</a>
 			<a href="#">Analysis View</a>

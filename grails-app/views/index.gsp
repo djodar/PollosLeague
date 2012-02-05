@@ -99,7 +99,8 @@
 		<div id="page-body" role="main">
 			<h1>Welcome to Pollos League</h1>
 			<p>Page under construction</p>
-
+			<p>Analytics: ${GrailsUtil.getEnvironment() == 'production'}</p>
+			<p>Environment: ${GrailsUtil.getEnvironment()}</p>
 			<div id="controller-list" role="navigation">
 				<h2>Handy links:</h2>
 				<ul>
