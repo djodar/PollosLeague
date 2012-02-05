@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>Welcome to Pollos League</title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;
@@ -97,18 +97,22 @@
 			</ul>
 		</div>
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<h1>Welcome to Pollos League</h1>
+			<p>Page under construction</p>
 
 			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+				<h2>Handy links:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
+					<li class="controller">
+						<g:link controller="league" params="[gameweek: '24']">
+							Pollos League GW 24
+						</g:link>
+					</li>
+					<li class="controller">
+						<g:link controller="team" params="[gameweek: 24, team: 2261351]">
+							Fabio GW 24
+						</g:link>
+					</li>
 				</ul>
 			</div>
 		</div>

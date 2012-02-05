@@ -7,11 +7,12 @@ class TeamController {
 	
 	def show(){
 		assert params.gameweek != null
+		assert params.team != null
 		int gameweek = params.gameweek.toInteger()
-		int alburnosCode = "499168".toInteger()
-		log.info "Show team ${alburnosCode} for gameweek ${gameweek}"
+		int team = params.team.toInteger()
+		log.info "Show team ${team} for gameweek ${gameweek}"
 		
-		def playerList = teamService.getTeam(getTeamIdList(gameweek, alburnosCode))
+		def playerList = teamService.getTeam(getTeamIdList(gameweek, team))
 		
 		assert playerList != null
 		request.model = playerList
