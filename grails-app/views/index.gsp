@@ -73,7 +73,22 @@
 				}
 			}
 		</style>
-	</head>
+        <script type="text/javascript">
+          function clickLink(team) {
+              var href = '${createLink(action:'show', controller:'team', absolute: true)}';
+              var selectedWeek = document.getElementById('gameweekSelect').value;
+              href = href + "?team=" + team + "&gameweek=" + selectedWeek; 
+              document.location = href;
+          }
+
+          function clickLeague() {
+              var href = '${createLink(action:'show', controller:'league', absolute: true)}';
+              var selectedWeek = document.getElementById('gameweekSelect').value;
+              href = href + "?gameweek=" + selectedWeek; value="25"
+              document.location = href;
+          }
+        </script>
+	</head>value="25"
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
@@ -103,46 +118,39 @@
 			<p>Environment: ${GrailsUtil.getEnvironment()}</p>
 			<div id="controller-list" role="navigation">
 				<h2>Handy links:</h2>
+                <label>Gameweek: </label>
+                <select id="gameweekSelect" name="gameweek">
+                  <g:each in="${(1..40)}" var="gw">
+                    <option value="${gw}" label="${gw}"/>
+                  </g:each>
+                </select>
 				<ul>
 					<li class="controller">
-						<g:link controller="league" params="[gameweek: '24']">
-							Pollos League GW 24
-						</g:link>
+                      <a href="#" onclick="clickLeague()">Pollos League</a>
+					</li>
+                    <li class="controller">
+                      <a href="#" onclick="clickLink('499168')">Daniel</a>
+                    </li>
+					<li class="controller">
+                      <a href="#" onclick="clickLink('2261351')">Fabio</a>
 					</li>
 					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 2261351]">
-							Fabio GW 24
-						</g:link>
+                      <a href="#" onclick="clickLink('2266825')">Jesus</a>
 					</li>
 					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 2266824]">
-							Jesus GW 24
-						</g:link>
+                      <a href="#" onclick="clickLink('206492')">Victor</a>
 					</li>
 					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 206492]">
-							Victor GW 24
-						</g:link>
+                      <a href="#" onclick="clickLink('379748')">Abel</a>
 					</li>
 					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 379748]">
-							Abel GW 24
-						</g:link>
+                      <a href="#" onclick="clickLink('190450')">Javier</a>
 					</li>
 					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 190450]">
-							Javi GW 24
-						</g:link>
+                      <a href="#" onclick="clickLink('2281707')">Oscar</a>
 					</li>
 					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 2281707]">
-							Oscar GW 24
-						</g:link>
-					</li>
-					<li class="controller">
-						<g:link controller="team" params="[gameweek: 24, team: 2279268]">
-							Alexis GW 24
-						</g:link>
+                      <a href="#" onclick="clickLink('2279268')">Alexis</a>
 					</li>
 				</ul>
 			</div>
